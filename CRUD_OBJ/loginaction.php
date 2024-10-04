@@ -10,12 +10,18 @@ $result = $data->fetch_assoc();
 
 
 if ($loginData > 0) {
-    if ($result['user_type']=='ADMIN') {
-        header('location:displayadmin.php');
+    if ($result['auth'] == 0) {
+        if ($result['user_type']=='ADMIN') {
+            header('location:displayadmin.php');
+        } else {
+            $_SESSION['id'] = $result['user_id'];
+            echo "<script>window.location.href='displayuser.php'</script>";
+        }
     } else {
-        $_SESSION['id'] = $result['user_id'];
-        echo "<script>window.location.href='displayuser.php'</script>";
+        echo "<script>alert('You are blocked')</script>";
+        echo "<script>window.location.href='login.php'</script>";
     }
+    
     
 } else {
     echo "<script>alert('Login Failed')</script>";

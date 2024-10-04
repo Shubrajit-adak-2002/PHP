@@ -20,7 +20,7 @@ if ($dbpass == $old_pass) {
             echo "<script>alert('Password updated')</script>";
             echo "<script>window.location.href=\"show.php\"</script>";
         } else {
-            echo "New password and confirm password are not matching are not matching";
+            echo "New password and confirm password are not matching";
             echo "<script>window.location.href='changepass.php'</script>";
         }
     } else {

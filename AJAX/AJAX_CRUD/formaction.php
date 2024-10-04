@@ -11,7 +11,7 @@ $tempname = $_FILES['img']['tmp_name'];
 $upload = 'upload/'.$filename;
 move_uploaded_file($tempname,$upload);
 
-echo $name,$email,$pass;
+echo $name,$email,$pass,$lang,$gen,$filename;
 
 $sql = "INSERT INTO `details`( `name`, `email`, `password`,`language`,`gender`,`image`) VALUES (:name,:email,:pass,:lang,:gen,:img)";
 $query = $con->prepare($sql);

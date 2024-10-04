@@ -11,6 +11,7 @@ $data = $con->query($sql);
         <th>Email</th>
         <th>Password</th>
         <th>Phone no</th>
+        <th>Action</th>
     </tr>
     <?php
     $i = 1;
@@ -21,6 +22,7 @@ $data = $con->query($sql);
             <td><?php echo $result['email']; ?></td>
             <td><?php echo $result['password']; ?></td>
             <td><?php echo $result['phone']; ?></td>
+            <td><a href="block.php?block_id=<?php echo $result['user_id']; ?>">Block</a> | <a href="unblock.php?unblk=<?php echo $result['user_id']; ?>">Unblock</a></td>
         </tr>
     <?php    
     }
