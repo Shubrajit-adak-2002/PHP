@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="passaction.php" method="post">
+    <form action="changepassaction.php" method="post">
         Enter your old password: <input type="text" name="oldp" id=""><br>
         Enter your new password: <input type="text" name="newp" id=""><br>
         Confirm password: <input type="text" name="confp" id=""><br>
